@@ -43,11 +43,13 @@ config PACKAGE_$(PKG_NAME)_INCLUDE_SHORTCUT_FE
 
 config PACKAGE_$(PKG_NAME)_INCLUDE_SHORTCUT_FE_CM
 	bool "Include Shortcut-FE CM"
+	default n if (TARGET_x86)
 	depends on PACKAGE_$(PKG_NAME)_INCLUDE_OFFLOADING=n
 	default y if !(TARGET_ipq40xx||TARGET_ipq60xx||TARGET_ipq806x||TARGET_ipq807x)
 
 config PACKAGE_$(PKG_NAME)_INCLUDE_SHORTCUT_FE_DRV
 	bool "Include Shortcut-FE ECM"
+	default n if (TARGET_x86)
 	depends on PACKAGE_$(PKG_NAME)_INCLUDE_OFFLOADING=n
 	depends on PACKAGE_$(PKG_NAME)_INCLUDE_SHORTCUT_FE_CM=n
 	depends on (TARGET_ipq60xx||TARGET_ipq806x||TARGET_ipq807x)
