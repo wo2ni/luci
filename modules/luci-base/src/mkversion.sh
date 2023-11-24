@@ -19,6 +19,7 @@ else
 	distversion = "Development Snapshot"
 end
 
-luciname    = "${3:-LuCI}"
-luciversion = "${2:-Git}"
+luciversion = "💗出生日期: $(TZ='Asia/Shanghai' date "+%Y年%m月%d日 %H时%M分%S秒")💗"
 EOF
+#luciname    = "${3:-LuCI}"
+#luciversion = "${2:-Git}"
